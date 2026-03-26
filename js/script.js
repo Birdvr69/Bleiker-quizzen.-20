@@ -1,53 +1,63 @@
 const quizData = [
     {
-        question: "Hvilken avdeling tilbyr opplæring innen Elektro og datateknologi?",
-        options: ["Helse- og oppvekstfag", "Elektro og datateknologi", "Idrettsfag", "Salg, service og reiseliv"],
+        // 1. Elektro og datateknologi
+        question: "Hva måles i Ohm (Ω)?",
+        options: ["Strøm", "Motstand", "Spenning", "Effekt"],
         answer: 1
     },
     {
-        question: "Hva kan man studere hvis man vil jobbe med barn- og ungdom?",
-        options: ["Kjøretøy", "Barne- og ungdomsarbeiderfag", "Elektro", "Media"],
+        // 2. Helse- og oppvekstfag
+        question: "Hva er normal kroppstemperatur hos mennesker?",
+        options: ["35°C", "37°C", "39°C", "40°C"],
         answer: 1
     },
     {
-        question: "Hvilken avdeling passer best hvis du er interessert i biler og motor?",
-        options: ["Elektro", "Helse", "Kjøretøy", "Idrett"],
-        answer: 2
-    },
-    {
-        question: "Hvor kan du gå hvis du vil bli personlig trener eller jobbe med sport?",
-        options: ["Idrettsfag", "Media", "Salg", "Helse"],
-        answer: 0
-    },
-    {
-        question: "Hvilket utdanningsprogram inkluderer medieproduksjon og informasjonsteknologi?",
-        options: ["Informasjonsteknologi og medieproduksjon", "Teknologi- og industrifag", "Salg, service og reiseliv", "Bygg- og anleggsteknikk"],
-        answer: 0
-    },
-    {
-        question: "Hva fokuserer avdelingen for Salg, service og reiseliv på?",
-        options: ["Mekanikk", "Kundebehandling og markedsføring", "Sykepleie", "Programmering"],
-        answer: 1
-    },
-    {
-        question: "Hvilken avdeling lærer deg om helsearbeid og pasientbehandling?",
-        options: ["Helse- og oppvekstfag", "Idrett", "Salg", "Media"],
-        answer: 0
-    },
-    {
-        question: "Se videoen nedenfor (liksom). Hva viser videoen?",
-        options: ["En bilmotor som repareres", "En robot som programmeres", "En pasient som får hjelp", "En elev som filmer"],
-        answer: 3,
+        // 3. Idrettsfag (Videooppgave)
+        question: "Se filmen og svar: Hvilken aktivitet utføres i videoen?",
+        options: ["A: Styrketrening", "B: Kondisjonstrening", "C: Bevegelighetstrening"],
+        answer: 1, // B
         video: true
     },
     {
-        question: "Hva er Bleiker videregående skole kjent for?",
-        options: ["Bare studiespesialisering", "Et bredt utvalg yrkesfaglige utdanninger", "Kun idrett", "At den ligger i Oslo"],
+        // 4. Medier og kommunikasjon
+        question: "Hva betyr målgruppe i media?",
+        options: ["Hvor reklamen sendes", "Hvem budskapet er laget for", "Hvor videoen spilles inn", "Hvor mange som ser"],
         answer: 1
     },
     {
-        question: "Hva kan man utdanne seg til innen Teknologi- og industrifag?",
-        options: ["Snekker", "Industrimekaniker", "Kokk", "Advokat"],
+        // 5. Påbygging til generell studiekompetanse
+        question: "Hvilket fagområde studerer samfunn og politikk?",
+        options: ["Sosiologi", "Biologi", "Fysikk", "Geografi"],
+        answer: 0
+    },
+    {
+        // 6. Salg, service og reiseliv
+        question: "Hva er god kundeservice?",
+        options: ["Å ignorere kunder", "Å hjelpe kunder på en vennlig og profesjonell måte", "Å selge mest mulig", "Å snakke lite"],
+        answer: 1
+    },
+    {
+        // 7. Teknologi- og industrifag
+        question: "Hva brukes en dreiebenk til?",
+        options: ["Sveising", "Bearbeiding av roterende materialer", "Maling", "Montering"],
+        answer: 1
+    },
+    {
+        // 8. Informasjonsteknologi og medieproduksjon
+        question: "Hva betyr HTML?",
+        options: ["HyperText Markup Language", "HighText Machine Language", "Hyper Transfer Media Link", "Home Tool Markup Language"],
+        answer: 0
+    },
+    {
+        // 9. Kombinasjonsklasse
+        question: "Hvilket styresett har Norge?",
+        options: ["Republikk", "Militærstyre", "Konstitusjonelt monarki", "Diktatur"],
+        answer: 2
+    },
+    {
+        // 10. Demokrati og medborgerskap
+        question: "Hva regnes som mobbing?",
+        options: ["En enkelt krangel mellom venner", "Gjentatt negativ atferd mot en person over tid", "Å være uenig med noen", "Å gi konstruktiv kritikk"],
         answer: 1
     }
 ];
@@ -88,6 +98,13 @@ function showQuestion() {
     optionsEl.innerHTML = '';
     feedbackEl.textContent = '';
     nextBtn.classList.add('hidden');
+
+    // Handle options grid layout based on number of options
+    if (q.options.length === 3) {
+        optionsEl.style.gridTemplateColumns = "1fr";
+    } else {
+        optionsEl.style.gridTemplateColumns = "1fr 1fr";
+    }
 
     if (q.video) {
         videoEl.classList.remove('hidden');
