@@ -97,6 +97,7 @@ function showQuestion() {
     questionEl.textContent = q.question;
     optionsEl.innerHTML = '';
     feedbackEl.textContent = '';
+    feedbackEl.className = ''; // Reset feedback color
     nextBtn.classList.add('hidden');
 
     // Handle options grid layout based on number of options
@@ -178,7 +179,12 @@ function saveHighScore() {
 
 function displayHighScores() {
     const highScores = JSON.parse(localStorage.getItem('bleikerHighScores')) || [];
-    highscoreEl.innerHTML = highScores.map(hs => `<li>${hs.name}: ${hs.score} poeng</li>`).join('');
+    highscoreEl.innerHTML = '';
+    highScores.forEach(hs => {
+        const li = document.createElement('li');
+        li.textContent = `${hs.name}: ${hs.score} poeng`;
+        highscoreEl.appendChild(li);
+    });
 }
 
 if (startBtn) startBtn.addEventListener('click', startQuiz);
