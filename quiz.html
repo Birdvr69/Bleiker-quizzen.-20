@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - BleikerQuizzen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="logo.svg" alt="BleikerQuizzen Logo" height="50">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="grafisk.html">Grafisk profil</a></li>
+                <li><a href="quiz.html" class="active">Quiz</a></li>
+                <li><a href="video.html">Videoinnslag</a></li>
+                <li><a href="some.html">SoMe // annonser</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="container quiz-container" id="quiz-container">
+            <h1>BleikerQuizzen</h1>
+
+            <div id="quiz-setup">
+                <p>Skriv inn navnet ditt for å starte quizen:</p>
+                <input type="text" id="user-name" placeholder="Ditt navn">
+                <button id="start-btn" class="btn">Start Quiz</button>
+            </div>
+
+            <div id="quiz-game" class="hidden">
+                <div id="score-display">Poeng: 0/0</div>
+                <div id="quiz-video" class="hidden">
+                    <div class="video-placeholder">
+                        <p>[ Her skal videoen fra avdelingen ligge ]</p>
+                        <p>Videoinnslag for ett av spørsmålene.</p>
+                    </div>
+                </div>
+                <h2 id="question">Laster spørsmål...</h2>
+                <div id="options" class="options-grid"></div>
+                <div id="feedback"></div>
+                <button id="next-btn" class="btn hidden">Neste spørsmål</button>
+            </div>
+
+            <div id="quiz-results" class="hidden">
+                <h2>Gratulerer!</h2>
+                <p id="final-score"></p>
+                <h3>Highscore (Topp 5)</h3>
+                <ol id="highscore-list"></ol>
+                <button onclick="location.reload()" class="btn">Prøv igjen</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Laget av Jules</p>
+            <img src="logo.svg" alt="BleikerQuizzen Logo" height="30">
+            <p>Kontakt: post@bleikerquizzen.no</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

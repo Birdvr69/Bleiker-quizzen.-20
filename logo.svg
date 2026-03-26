@@ -1,0 +1,13 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple background -->
+  <rect width="200" height="200" fill="white" />
+
+  <!-- A very basic 'noob' looking circle -->
+  <circle cx="100" cy="80" r="50" fill="red" stroke="black" stroke-width="5" />
+
+  <!-- The text 'B' for Bleiker -->
+  <text x="100" y="100" font-family="Comic Sans MS, Arial" font-size="60" text-anchor="middle" fill="white">B</text>
+
+  <!-- The name -->
+  <text x="100" y="170" font-family="Arial" font-size="20" text-anchor="middle" fill="black" font-weight="bold">BleikerQuizzen</text>
+</svg>
