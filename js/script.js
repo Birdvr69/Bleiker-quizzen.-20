@@ -14,7 +14,7 @@ const quizData = [
     {
         // 3. Idrettsfag (Videooppgave)
         question: "Se filmen og svar: Hvilken aktivitet utføres i videoen?",
-        options: ["A: Styrketrening", "B: Kondisjonstrening", "C: Bevegelighetstrening"],
+        options: ["A", "B", "C"],
         answer: 1, // B
         video: true
     },
